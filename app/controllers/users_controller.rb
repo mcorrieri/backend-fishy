@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
-    # skip_before_action :user_logged_in?, only: [:show, :update]
+    before_action :authorized, only: [:keep_logged_in, :update]
 
 
     def show
+        @user = User.find(params[:id])
         render json: @user
     end
 
@@ -24,18 +25,22 @@ class UsersController < ApplicationController
    
    
     def login 
-        user = User.find_by(username: params[:username])
-        if user && user.authenticate(params[:password])
-            render json: {username: user.username, id: user.id, token: encode_token({user_id: user.id})}
+        @user = User.find_by(username: params[:username])
+        if @user && @user.authenticate(params[:password])
+            render json: {username: @user.username, id: @user.id, fish: @user.fish, token: encode_token({user_id: @user.id})}
         else 
             render json: {message: "wrong username or password"}
         end 
     end 
 
+    def keep_logged_in
+        render json: {username: @user.username, id: @user.id, fish: @user.fish, token: encode_token({user_id: @user.id})}
+    end
+
 
     def update
         @user.update(user_params)
-        render json: user
+        render json: @user
     end
     
     def destroy 

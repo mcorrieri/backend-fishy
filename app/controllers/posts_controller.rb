@@ -11,23 +11,23 @@ class PostsController < ApplicationController
     end
 
     def create 
-        @post = Post.new(post_params)
-
+        @post = Post.create(post_params)
         if @post.valid?
-            @post.save 
-            render json: @post 
+            render json: @post
         else 
-            render json: {error: "cannot create post"}
+            render json: {message: "cannot create post"}
         end 
     end 
 
     def destroy
+        @post = Post.find(params[:id])
         @post.destroy
+        render json: {message: "Post deleted"}
     end
 
     private
     def post_params
-        params.require(:post).permit(:date, :description, :image, :water_type, :location)
+        params.permit(:date, :description, :image, :water_type, :location)
     end
 
 end

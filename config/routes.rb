@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  
-  resources :users, only: [:create, :index]
   post "/login", to: "users#login"
+  get "/keep_logged_in", to: "users#keep_logged_in"
   
   
-  resources :posts, only: [:show, :index, :create, :update, :delete]
+  
+  resources :users
+  resources :posts
   resources :fish, only: [:show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
