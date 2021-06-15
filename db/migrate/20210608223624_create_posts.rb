@@ -4,8 +4,11 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.string :date
       t.string :description
       t.string :image
-      t.string :water_type
       t.string :location
+      t.integer :price
+      t.string :comment 
+      t.integer :user_id
+      t.integer :fish_id 
 
       t.timestamps
     end

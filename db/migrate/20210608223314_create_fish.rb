@@ -1,10 +1,11 @@
 class CreateFish < ActiveRecord::Migration[6.1]
   def change
     create_table :fish do |t|
-      t.integer :user_id
-      t.integer :post_id
-      t.string :name
-      t.integer :care_level
+      t.string :image 
+      t.string :breed
+      t.integer :tanksize
+      t.integer :carelevel
+      t.string :watertype
 
       t.timestamps
     end

@@ -15,20 +15,18 @@ u2 = User.create(username: "Marky Mark", password: "TODO")
 u3 = User.create(username: "Juan", password: "TODO")
 u4 = User.create(username: "Cheech", password: "TODO")
 
+puts "Creating Fish"
+f1 = Fish.create(breed: "Pleco", carelevel: 5, tanksize: 5, watertype: "Freshwater", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/2004-02-02_Pterygoplichthys_pardalis_on_blue_gravel.jpg/1200px-2004-02-02_Pterygoplichthys_pardalis_on_blue_gravel.jpg")
+f2 = Fish.create(breed: "Angelfish", carelevel: 3, tanksize: 30, watertype: "Freshwater", image: "https://images.saymedia-content.com/.image/t_share/MTczOTEzMTcxMzQ4Njk0MDgw/freshwater-angelfish-care-guide-facts-faq.jpg")
+f3 = Fish.create(breed: "Clown Loach", carelevel: 1, tanksize: 40, watertype: "Freshwater", image: "https://www.fishkeepingworld.com/wp-content/uploads/2019/07/The-Clown-Loach-Care-Guide-A-Playful-Bottom-Dweller-For-Community-Tanks-Cover.jpg")
+f4 = Fish.create(breed: "Tetra", carelevel: 5, tanksize: 40, watertype: "Freshwater", image: "https://www.aquariadise.com/wp-content/uploads/2020/06/congo-.jpg")
+f5 = Fish.create(breed: "Knifefish", carelevel: 8, tanksize: 55, watertype: "Freshwater", image: "https://azgardens.com/wp-content/uploads/2017/06/Black-Ghost-Knifefish.jpg")
+f6 = Fish.create(breed: "Lionfish", carelevel: 9, tanksize: 70, watertype: "Saltwater", image: "https://cdn.vox-cdn.com/thumbor/oDbW3_3ltOEcMWBBaWukoEwHlFg=/116x0:1381x949/1820x1213/filters:focal(116x0:1381x949):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/41531918/14813065178_2e03f973cd_o.0.0.jpg")
+f7 = Fish.create(breed: "Clownfish", carelevel: 3, tanksize: 25, watertype: "Saltwater", image: "https://cdn.theatlantic.com/thumbor/PjnYq0VZZh3uX5imYR0PNInV1Kw=/0x100:3456x2044/1952x1098/media/img/2014/05/shutterstock_141051217/original.jpg")
 
 puts "Creating Post"
-p1 = Post.create(date: "June 8 2021", description: "Great fish hes cool", image: "https://i.imgur.com/NqMMI8F.jpeg", water_type: "Freshwater", location: "Brooklyn")
-p2 = Post.create(date: "June 9 2021", description: "Angelfish babies. Have too many, fun to watch them grow", image: "https://i.imgur.com/NqMMI8F.jpeg", water_type: "Freshwater", location: "Brooklyn")
-p3 = Post.create(date: "June 10 2021", description: "Albino Oscar is way too big for my tank.", image: "https://i.imgur.com/NqMMI8F.jpeg", water_type: "Freshwater", location: "Brooklyn")
-p4 = Post.create(date: "May 11 2021", description: "Moving and have to tear down my tank. Please take my Congo tetras", image: "https://i.imgur.com/NqMMI8F.jpeg", water_type: "Freshwater", location: "Brooklyn")
-p5 = Post.create(date: "July 4 2021", description: "Neon tetras need a good home.", image: "https://i.imgur.com/NqMMI8F.jpeg", water_type: "Freshwater", location: "Brooklyn")
-
-puts "Creating Fish"
-Fish.create(user: u1, post: p1, name: "Fishy", care_level: 5)
-Fish.create(user: u2, post: p2, name: "Pickles", care_level: 2)
-Fish.create(user: u3, post: p3, name: "Swimmy", care_level: 9)
-Fish.create(user: u4, post: p4, name: "Bubba", care_level: 6)
-Fish.create(user: u1, post: p5, name: "Donkey", care_level: 7)
-Fish.create(user: u2, post: p1, name: "Splishy", care_level: 10)
+p1 = Post.create(date: "June 15, 2021", description: "Bought", image: "https://cdn.shopify.com/s/files/1/1163/2672/products/L397-Panaqolus-Pleco-1_1024x1024.jpg?v=1561723517", location: "Brooklyn", price: 10, comment: "Fish was healthy", user_id: u1.id, fish_id: f1.id)
+p2 = Post.create(date: "June 18, 2021", description: "Sold", image: "https://cdn.shopify.com/s/files/1/1163/2672/products/L397-Panaqolus-Pleco-1_1024x1024.jpg?v=1561723517", location: "Bed Stuy", price: 20, comment: "Fish was dead", user_id: u2.id, fish_id: f2.id)
+p3 = Post.create(date: "July 30, 2021", description: "Bought", image: "https://cdn.shopify.com/s/files/1/1163/2672/products/L397-Panaqolus-Pleco-1_1024x1024.jpg?v=1561723517", location: "Queens", price: 400, comment: "Fish was super cool", user_id: u3.id, fish_id: f3.id)
 
 puts "Done!!!"

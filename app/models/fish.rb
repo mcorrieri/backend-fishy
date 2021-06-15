@@ -1,4 +1,4 @@
 class Fish < ApplicationRecord
-    belongs_to :post
-    belongs_to :user 
+    has_many :posts
+    has_many :users, through: :posts  
 end

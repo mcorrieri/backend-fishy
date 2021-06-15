@@ -16,10 +16,11 @@ ActiveRecord::Schema.define(version: 2021_06_08_223624) do
   enable_extension "plpgsql"
 
   create_table "fish", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
-    t.string "name"
-    t.integer "care_level"
+    t.string "image"
+    t.string "breed"
+    t.integer "tanksize"
+    t.integer "carelevel"
+    t.string "watertype"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -28,8 +29,11 @@ ActiveRecord::Schema.define(version: 2021_06_08_223624) do
     t.string "date"
     t.string "description"
     t.string "image"
-    t.string "water_type"
     t.string "location"
+    t.integer "price"
+    t.string "comment"
+    t.integer "user_id"
+    t.integer "fish_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
