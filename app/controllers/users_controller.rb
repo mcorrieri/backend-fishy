@@ -26,8 +26,10 @@ class UsersController < ApplicationController
    
     def login 
         @user = User.find_by(username: params[:username])
+        
         if @user && @user.authenticate(params[:password])
-            render json: {username: @user.username, id: @user.id, fish: @user.fish, posts: @user.posts, token: encode_token({user_id: @user.id})}
+            userfish = Fish.where(owner_id: @user.id )
+            render json: {username: @user.username, id: @user.id, fish: userfish, posts: @user.posts, token: encode_token({user_id: @user.id})}
         else 
             render json: {message: "wrong username or password"}
         end 

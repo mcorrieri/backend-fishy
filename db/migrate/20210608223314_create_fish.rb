@@ -6,6 +6,7 @@ class CreateFish < ActiveRecord::Migration[6.1]
       t.integer :tanksize
       t.integer :carelevel
       t.string :watertype
+      t.integer :owner_id
 
       t.timestamps
     end

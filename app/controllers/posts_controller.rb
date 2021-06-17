@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
     
     def index
-        @posts = Post.all 
-        render json: @posts
+        @posts = Post.all
+        filtered_posts = @posts.select {|post| post.fish.owner_id == nil } 
+        render json: filtered_posts
     end
 
     def show

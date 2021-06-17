@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_223624) do
     t.integer "tanksize"
     t.integer "carelevel"
     t.string "watertype"
+    t.integer "owner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
